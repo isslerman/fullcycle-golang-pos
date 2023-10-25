@@ -19,7 +19,7 @@ type CEP struct {
 	Service      string `json:"service"`
 }
 
-// dados ViaCEP - https://viacep.com.br/ws/01246030/json/
+// dados ViaCEP - https://viacep.com.br/ws/01220020/json/
 type ViaCEP struct {
 	Cep         string `json:"cep"`
 	Logradouro  string `json:"logradouro"`
