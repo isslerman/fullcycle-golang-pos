@@ -1,0 +1,13 @@
+go 1.20
+
+use ./07-Packing/04-Workspace/system
+
+use ./07-Packing/04-Workspace/math
+
+use (
+	./08-Testing/01
+	./08-Testing/02
+	./08-Testing/03
+	./09-APIS
+	./CleanArchitecture
+)

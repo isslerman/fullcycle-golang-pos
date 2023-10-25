@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+        <h1>Welcome to BossHouse</h1>  
+    </main>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Horas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range . }}
+            <tr>
+                <td>{{ .Nome }}</td>
+                <td>{{ .CargaHoraria }}</td>
+            </tr>
+            {{ if eq .CargaHoraria 40 }}
+            <tr>
+                <td>{{ .Nome }}</td>
+                <td>{{ .CargaHoraria }}</td>
+            </tr>
+            {{ end }}
+            {{ end }}
+        </tbody>
+    </table>
+
+  </body>
+</html>
