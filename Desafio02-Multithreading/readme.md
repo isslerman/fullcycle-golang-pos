@@ -33,22 +33,24 @@ URL: https://brasilapi.com.br/api/cep/v1/{cep}
 EX. JSON viacep
  http://viacep.com.br/ws/" + cep + "/json/
  {
-  "cep": "01246-030",
-  "logradouro": "Rua Itaquera",
+  "cep": "01220020",
+  "logradouro": "Rua Doutor Luiz de Freitas Melro",
   "complemento": "",
-  "bairro": "Pacaembu",
+  "bairro": "Centro",
   "localidade": "São Paulo",
   "uf": "SP",
-  "ibge": "3550308",
-  "gia": "1004",
+  "ibge": "",
+  "gia": "",
   "ddd": "11",
-  "siafi": "7107"
+  "siafi": ""
 }
 
 JSON DE DADOS DE SAIDA
-saida
-cep
-estado
-cidade
-rua
-service
+{
+    "cep":          "01220020",
+    "state":        "SP",
+    "city":         "São Paulo",
+	"address":      "Rua Doutor Luiz de Freitas Melro",
+	"neighborhood": "Centro",
+	"service":      "viacep"
+}
