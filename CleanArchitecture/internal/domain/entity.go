@@ -12,12 +12,12 @@ type Todo struct {
 	DateFinished time.Time
 }
 
-func (t *Todo) Done() error {
-	t.Status = "done"
-	t.DateFinished = time.Now()
-}
+// func (t *Todo) Done() {
+// 	t.Status = "done"
+// 	t.DateFinished = time.Now()
+// }
 
-func (t *Todo) Undone() error {
-	t.Status = "undone"
-	t.DateFinished = time.Now()
-}
+// func (t *Todo) Undone() {
+// 	t.Status = "undone"
+// 	t.DateFinished = time.Now()
+// }

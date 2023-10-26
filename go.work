@@ -1,4 +1,4 @@
-go 1.20
+go 1.21.3
 
 use ./07-Packing/04-Workspace/system
 
@@ -9,5 +9,6 @@ use (
 	./08-Testing/02
 	./08-Testing/03
 	./09-APIS
+	./11-Events
 	./CleanArchitecture
 )

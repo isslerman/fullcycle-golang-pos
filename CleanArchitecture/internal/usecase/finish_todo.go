@@ -17,15 +17,15 @@ type InputCompensateFinishTodo struct {
 	Reason string
 }
 
-type FinishTodoUseCase struct {
-	TodoRepository  TodoRepository
-	CompensateEvent CompensateEvent
-}
+// type FinishTodoUseCase struct {
+// 	TodoRepository  TodoRepository
+// 	CompensateEvent CompensateEvent
+// }
 
-func (f *FinishTodoUseCase) Execute(input any) (any, error) {
+// func (f *FinishTodoUseCase) Execute(input any) (any, error) {
 
-}
+// }
 
-func (f *FinishTodoUseCase) Compensate(input any) error {
+// func (f *FinishTodoUseCase) Compensate(input any) error {
 
-}
+// }
