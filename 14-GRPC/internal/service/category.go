@@ -118,3 +118,5 @@ func (c *CategoryService) CreateCategoryBidirecional(stream pb.CategoryService_C
 		}
 	}
 }
+
+// Ctrl+d to cancel Evans
