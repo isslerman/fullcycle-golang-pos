@@ -10,5 +10,6 @@ use (
 	./08-Testing/03
 	./09-APIS
 	./11-Events
+	./12-GraphQl
 	./CleanArchitecture
 )
