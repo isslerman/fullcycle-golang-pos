@@ -12,5 +12,6 @@ use (
 	./11-Events
 	./12-GraphQl
 	./14-GRPC
+	./15-UploadS3
 	./CleanArchitecture
 )
