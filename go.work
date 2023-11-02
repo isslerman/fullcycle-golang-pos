@@ -13,5 +13,6 @@ use (
 	./12-GraphQl
 	./14-GRPC
 	./15-UploadS3
+	./16-CLI
 	./CleanArchitecture
 )
