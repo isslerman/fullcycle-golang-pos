@@ -14,5 +14,6 @@ use (
 	./14-GRPC
 	./15-UploadS3
 	./16-CLI
+	./17-SQLC
 	./CleanArchitecture
 )
