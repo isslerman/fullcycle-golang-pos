@@ -15,5 +15,6 @@ use (
 	./15-UploadS3
 	./16-CLI
 	./17-SQLC
+	./18-UOW
 	./CleanArchitecture
 )
