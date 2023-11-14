@@ -7,5 +7,6 @@ import "github.com/isslerman/202308-CursoPosGoFullCycle/20-CleanArchitecture/int
 // It serves as dependency injection for your app, add any dependencies you require here.
 
 type Resolver struct {
-	CreateOrderUseCase usecase.CreateOrderUseCase
+	CreateOrderUseCase     usecase.CreateOrderUseCase
+	CreateGetOrdersUseCase usecase.GetOrdersUseCase
 }

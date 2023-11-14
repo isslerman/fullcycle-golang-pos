@@ -1,0 +1,18 @@
+mutation createOrder {
+  createOrder(input: { id: "graphQL", Price: 10, Tax: 15.2 })
+  {
+    id
+    Price
+    Tax
+    FinalPrice
+  }
+}
+
+query orders{
+  orders{
+    id
+    Price
+    Tax
+    FinalPrice
+  }
+}

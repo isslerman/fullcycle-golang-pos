@@ -40,3 +40,30 @@ STEPS:
       4. wire_gen.go - arquivo gerado pelo wire a partir do wire.go. 
    6. Pasta config
       1. config.go - arquivo que carrega as configurações. Starter. 
+
+
+--- DESAFIO
+1. Fazer a listagem das ordens em endpoint REST
+2. Fazer a listagem das ordens em gRPC
+3. Fazer a listagem das ordens em graphQL
+
+
+--- COMMANDS
+
+MYSQL
+mysql -uroot -p orders
+show tables;
+
+PROTOC
+protoc --go_out=. --go-grpc_out=. ./internal/infra/grpc/protofiles/order.proto
+
+EVANS
+evans -r repl
+package pb
+service OrderService
+call CreateOrder
+call GetOrders
+
+RUNNING THE APP: 
+docker-compose up -d
+go run main.go wire_gen.go

@@ -55,19 +55,22 @@ func main() {
 	// Criando o UseCase - depende do DB, Event.
 	// Aqui usamos o wire para gerar esse DI. // ver wire_gen.go
 	createOrderUseCase := NewCreateOrderUseCase(db, eventDispatcher)
+	createGetOrdersUseCase := NewGetOrdersUseCase(db, eventDispatcher)
 
 	// subindo o webserver
 	webserver := webserver.NewWebServer(configs.WebServerPort)
 	webOrderHandler := NewWebOrderHandler(db, eventDispatcher)
 	webserver.AddHandler("/order", webOrderHandler.Create)
+	webserver.AddHandler("/orders", webOrderHandler.GetOrders)
 	fmt.Println("Starting web server on port", configs.WebServerPort)
 	// registra o chi logger e os handlers
 	// usamos o go para não travar o app aqui.
 	go webserver.Start()
 
 	// Server gRPC
+	//////////////
 	grpcServer := grpc.NewServer()
-	createOrderService := service.NewOrderService(*createOrderUseCase)
+	createOrderService := service.NewOrderService(*createOrderUseCase, *createGetOrdersUseCase)
 	pb.RegisterOrderServiceServer(grpcServer, createOrderService)
 	reflection.Register(grpcServer)
 
@@ -80,9 +83,12 @@ func main() {
 	// subimos o server usando o go para não travar o app aqui.
 	go grpcServer.Serve(lis)
 
+	// GraphQL
+	//////////
 	// no resolver passamos aqui o UseCase, depende dele.
 	srv := graphql_handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{
-		CreateOrderUseCase: *createOrderUseCase,
+		CreateOrderUseCase:     *createOrderUseCase,
+		CreateGetOrdersUseCase: *createGetOrdersUseCase,
 	}}))
 	// rotas
 	http.Handle("/", playground.Handler("GraphQL playground", "/query"))

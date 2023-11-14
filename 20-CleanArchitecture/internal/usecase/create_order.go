@@ -1,6 +1,8 @@
 package usecase
 
 import (
+	"fmt"
+
 	"github.com/isslerman/202308-CursoPosGoFullCycle/20-CleanArchitecture/internal/entity"
 	"github.com/isslerman/202308-CursoPosGoFullCycle/20-CleanArchitecture/pkg/events"
 )
@@ -43,16 +45,21 @@ func NewCreateOrderUseCase(
 // Recebe o inputDTO, retorna
 func (c *CreateOrderUseCase) Execute(input OrderInputDTO) (OrderOutputDTO, error) {
 	// cria a ordem usando os dados recebidos pela inputDTO
-	order := entity.Order{
-		ID:    input.ID,
-		Price: input.Price,
-		Tax:   input.Tax,
+	order, err := entity.NewOrder(input.ID, input.Price, input.Tax)
+	if err != nil {
+		return OrderOutputDTO{}, err
 	}
+	// order := entity.Order{
+	// 	ID:    input.ID,
+	// 	Price: input.Price,
+	// 	Tax:   input.Tax,
+	// }
 	// tendo a ordem criada, calcula o preço final.
 	order.CalculateFinalPrice()
+	fmt.Printf("Debug: order - %v\n", order)
 	// usa o repositorio para salvar em banco. Não importa se é BD, file, ele está sendo salvo.
 	// se existir um erro, retorno o outputDTO em branco + erro.
-	if err := c.OrderRepository.Save(&order); err != nil {
+	if err := c.OrderRepository.Save(order); err != nil {
 		return OrderOutputDTO{}, err
 	}
 
