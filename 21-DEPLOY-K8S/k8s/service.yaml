@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: serversvc
+spec:
+# aqui escolhemos qual o tipo, se vai ser interno, loadbalancer lança um ip externo de conexao. 
+  type: LoadBalancer
+  selector:
+    app: server
+  ports:
+  - port: 8080
+    targetPort: 8080

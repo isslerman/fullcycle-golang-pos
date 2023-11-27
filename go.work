@@ -5,6 +5,7 @@ use ./07-Packing/04-Workspace/system
 use ./07-Packing/04-Workspace/math
 
 use (
+	./03-Fundacao/22-Interface
 	./08-Testing/01
 	./08-Testing/02
 	./08-Testing/03
@@ -16,5 +17,8 @@ use (
 	./16-CLI
 	./17-SQLC
 	./18-UOW
+	./19-DI
+	./20-CleanArchitecture
+	./21-DEPLOY-K8S
 	./CleanArchitecture
 )
