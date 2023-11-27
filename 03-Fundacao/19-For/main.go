@@ -8,8 +8,8 @@ func main() {
 	}
 
 	numeros := []string{"um", "dois", "tres"}
-	for k, v := range numeros {
-		println(k, v)
+	for k, value := range numeros {
+		println(k, value)
 	}
 
 	for _, v := range numeros {
