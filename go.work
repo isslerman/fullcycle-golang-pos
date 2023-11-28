@@ -1,4 +1,4 @@
-go 1.21.3
+go 1.21.4
 
 use ./07-Packing/04-Workspace/system
 
@@ -20,5 +20,6 @@ use (
 	./19-DI
 	./20-CleanArchitecture
 	./21-DEPLOY-K8S
+	./24-fsnotify
 	./CleanArchitecture
 )
