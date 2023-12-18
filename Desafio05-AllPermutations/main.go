@@ -8,9 +8,12 @@ import (
 )
 
 func main() {
-	for i := 1; i <= 3; i++ {
+	numberOfTimesToRun := 3
+	sizeOfSlice := 12
+
+	for i := 1; i <= numberOfTimesToRun; i++ {
 		start := time.Now()
-		demoPerm(13)
+		demoPerm(sizeOfSlice)
 		elapsed := time.Since(start)
 		fmt.Printf("Permutation took %s\n", elapsed)
 	}
