@@ -21,5 +21,6 @@ use (
 	./20-CleanArchitecture
 	./21-DEPLOY-K8S
 	./24-fsnotify
+	./25-Patterns/01-options
 	./CleanArchitecture
 )
