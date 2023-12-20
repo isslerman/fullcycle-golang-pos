@@ -17,6 +17,7 @@ func main() {
 		elapsed := time.Since(start)
 		fmt.Printf("Permutation took %s\n", elapsed)
 	}
+
 }
 
 func demoPerm(n int) {
