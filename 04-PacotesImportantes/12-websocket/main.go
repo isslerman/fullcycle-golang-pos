@@ -1,9 +1,16 @@
 package main
 
-// onbrowser console
+// How to connect to our server using a browser console
 // let socket = new WebSocket("ws//localhost:3000/ws")
 // socket.onmessage = (event) => { console.log("received from the server:", event.data)}
-// socket.send("hello baby from ws clienttt")
+// socket.send("hello baby from ws client")
+
+// connect and subscribe to our channel
+// let socket = new WebSocket("ws://localhost:3000/wsHandleWSOrderBook")
+// socket.onmessage = (event) => { console.log("received from the server:", event.data)}
+
+// close the socket client
+// socket.close()
 
 // Ref.:
 // https://www.youtube.com/watch?v=JuUAEYLkGbM
