@@ -5,6 +5,9 @@ package main
 // socket.onmessage = (event) => { console.log("received from the server:", event.data)}
 // socket.send("hello baby from ws clienttt")
 
+// Ref.:
+// https://www.youtube.com/watch?v=JuUAEYLkGbM
+
 import (
 	"fmt"
 	"io"
