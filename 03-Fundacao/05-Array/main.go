@@ -17,3 +17,16 @@ func main() {
 		fmt.Printf("O valor do indice [%d] é %d\n", i, v)
 	}
 }
+
+func rotateLeft(d int32, arr []int32) []int32 {
+	if d == 0 || len(arr) == 0 {
+		return arr
+	}
+	shifted := make([]int32, len(arr))
+
+	for i := range arr {
+		shifted[i] = arr[(int32(int32(i)+d))%int32(len(arr))]
+	}
+	return shifted
+
+}
