@@ -5,6 +5,8 @@ import (
 	"fmt"
 )
 
+var globalVar int
+
 func main() {
 	fmt.Println(sum(1, 2))
 	fmt.Println(sum2(10, 2))
@@ -15,6 +17,17 @@ func main() {
 		fmt.Println(err)
 	}
 	fmt.Println(soma)
+	globalVar = 10
+	point := &globalVar
+	point2 := &point
+	fmt.Printf("Globalvar: %d, add:%p, type: %T\n", globalVar, &globalVar, globalVar)
+	fmt.Printf("point: %v, value: %v, add:%p, type: %T\n", point, *point, &point, point)
+	fmt.Printf("point2: %v, value: %v, add:%p, type: %T\n", point2, **point2, &point2, point2)
+	printPointers(point)
+}
+
+func printPointers(p *int) {
+	fmt.Printf("PrintPoint: %v, %T\n", *p, p)
 }
 
 // func sum(a int, b int) int {
