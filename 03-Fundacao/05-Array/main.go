@@ -28,5 +28,4 @@ func rotateLeft(d int32, arr []int32) []int32 {
 		shifted[i] = arr[(int32(int32(i)+d))%int32(len(arr))]
 	}
 	return shifted
-
 }
