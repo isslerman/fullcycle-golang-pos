@@ -24,10 +24,17 @@ func main() {
 	fmt.Printf("point: %v, value: %v, add:%p, type: %T\n", point, *point, &point, point)
 	fmt.Printf("point2: %v, value: %v, add:%p, type: %T\n", point2, **point2, &point2, point2)
 	printPointers(point)
+
+	changeGlobalVar()
+	fmt.Printf("Globalvar: %d, add:%p, type: %T\n", globalVar, &globalVar, globalVar)
 }
 
 func printPointers(p *int) {
 	fmt.Printf("PrintPoint: %v, %T\n", *p, p)
+}
+
+func changeGlobalVar() {
+	globalVar = 50
 }
 
 // func sum(a int, b int) int {
