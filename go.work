@@ -5,7 +5,8 @@ use ./07-Packing/04-Workspace/system
 use ./07-Packing/04-Workspace/math
 
 use (
-	./03-Fundacao/22-Interface
+	./03-Fundacao/22-Interface/BankAccounts-Project-Example
+	./03-Fundacao/22-Interface/DataBase-Project-Example
 	./08-Testing/01
 	./08-Testing/02
 	./08-Testing/03
